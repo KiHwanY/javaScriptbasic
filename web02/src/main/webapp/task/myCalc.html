@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myCalc</title>
+<script type="text/javascript">
+function calc(type) {
+	var x=Number(document.getElementById("input1").value);
+	var y=Number(document.getElementById("input2").value);
+	var c;
+	
+	switch (type) {
+	case 1:
+		c = Math.sin((x * Math.PI) / 180.0);
+		break;
+	case 2:
+		c = Math.cos((x * Math.PI) / 180.0);
+		break;
+	case 3:
+		c = Math.tan((x * Math.PI) / 180.0);
+		break;
+	case 4:
+		c = Math.log(x);
+	case 5:
+		c = x+y;
+		break;
+	case 6:
+		c = x-y;
+		break;
+	case 7:
+		c = x*y;
+		break;
+	case 8:
+		c = x/y;
+		break;
+		
+	default:
+		break;
+	}
+	document.getElementById("output").value =c;
+}
+function reset() {
+	document.getElementById("output").value ="";
+}
+
+</script>
+</head>
+<body>
+
+<table border="1">
+<tr>
+<td align="center"><h3>전자 계산기</h3></td>
+<tr>
+<td>첫번째 값 :  <input type="text" id="input1"></td>
+</tr>
+<tr>
+<td>두번째 값 :  <input type="text" id="input2"></td>
+</tr>
+<tr>
+<td>결과 : <input type="text" id="output"></td>
+</tr>
+<tr>
+<td>
+<input type="button" id="sin" value="sin" onclick="calc(1)">
+<input type="button" id="cos" value="cos" onclick="calc(2)">
+<input type="button" id="tan" value="tan" onclick="calc(3)">
+<input type="button" id="Log" value="Log" onclick="calc(4)">
+<input type="button" id="+" value="+" onclick="calc(5)">
+<input type="button" id="-" value="-" onclick="calc(6)">
+<input type="button" id="*" value="*" onclick="calc(7)">
+<input type="button" id="/" value="/" onclick="calc(8)">
+<input type="reset" id="C" value="C" onclick="reset()">
+</td>
+</tr>
+</table>
+
+</body>
+</html>

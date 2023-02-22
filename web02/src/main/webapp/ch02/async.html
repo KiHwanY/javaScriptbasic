@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>async</title>
+<script type="text/javascript">
+//비동기프로그램 : 어떤 작업 요청 후 다른 작업을 수행하다 이벤트가 발생하면 그에 대한 응답을 받아 처리하는 것
+function square(x, callback) {
+	document.write(x*x);
+	setTimeout(callback , 2000); //1초 후에 기억된 callback의 익명함수의 내용을 처리,여기서 비동기적으로 처리
+
+}
+square(2,function(x){
+	alert('콜백함수 실행');
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

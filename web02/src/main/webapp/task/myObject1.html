@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myObject1</title>
+<script type="text/javascript">
+function emp(deptno , name, id, email , tel) {
+	this.deptno =deptno;
+	this.name= name;
+	this.id=id;
+	this.email=email;
+	this.tel=tel;
+}
+original_emp = new emp(1234,"홍길동","hong","hong@gmail.com","010-1234-5678");
+document.write("----------원데이터--------------","<br>");
+document.write("사번 : "+ original_emp.deptno,"<br>");
+document.write("이름 : "+ original_emp.name,"<br>");
+document.write("ID : "+ original_emp.id,"<br>");
+document.write("이메일 : "+ original_emp.email,"<br>");
+document.write("hp: "+ original_emp.tel,"<br>");
+
+original_emp.email = "hong2@naver.com";
+original_emp.tel= "010-2222-3333";
+
+document.write("<br>");
+
+document.write("----------변경데이터--------------","<br>");
+document.write("사번 : "+ original_emp.deptno,"<br>");
+document.write("이름 : "+ original_emp.name,"<br>");
+document.write("ID : "+ original_emp.id,"<br>");
+document.write("이메일 : "+ original_emp.email,"<br>");
+document.write("hp: "+ original_emp.tel,"<br>");
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

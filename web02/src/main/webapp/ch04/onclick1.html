@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onclick1</title>
+<script type="text/javascript">
+function changeColor(color) {
+	document.getElementById("target").style.backgroundColor = color;
+}
+function changeText(color) {
+	document.getElementById("target").style.color = color;
+}
+function viewDate() {
+	var now = new Date();//날짜 객체 생성
+	var display = now.toLocaleString();
+	document.getElementById("time").innerHTML = display;
+	window.setTimeout("viewDate()", 1000); //1초간 재귀호출
+	
+}
+
+</script>
+</head>
+<!-- onload : 페이지 로딩 되자마자 함수호출-->
+<body onload="viewDate()" id="target">
+<h2>배경색상 변경(click event)</h2>
+<div id="time"></div>
+<input type="button" value="green" onclick="changeColor('green');changeText('white')">
+<input type="button" value="yellow" onclick="changeColor('yellow');changeText('#ff0000')">
+<input type="button" value="blue" onclick="changeColor('#0000ff');changeText('#ffff00')">
+</body>
+</html>

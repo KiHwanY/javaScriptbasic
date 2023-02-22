@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>try</title>
+<script type="text/javascript">
+function test() {
+	try {
+		alert("Hello");
+	} catch (e) {
+		msg="오류 발생 : "+ e.message;
+		alert(msg);
+	}finally{//항상 실행되는 코드
+		alert("종료되었습니다.");
+	}
+}
+test();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

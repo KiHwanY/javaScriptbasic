@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event_ex</title>
+<script src="../include/jquery-3.6.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("sapn").on("click" , $("span"), function(){
+		$(this).css("background-color","pink" )
+	});
+	$("p").one("click", function() {
+		$(this).css("background-color" , "blue");
+	});
+	$("button").click(function() {
+		$("p").off("click"); //p태그에 대한 on이벤트 핸들러를 제거
+	})
+	
+});
+
+</script>
+</head>
+<body>
+<p><span>클릭하면 span태그 문단은 핑크색으로 변합니다.</span> </p>
+<p>p태그 문단을 클릭하면 파란색으로 변합니다.</p>
+
+<button>F5를 누른 후 클릭해보세요!! 다시 위문단을 클릭하면 p태그에 설정된 파란색으로 안변합니다.</button>
+</body>
+</html>

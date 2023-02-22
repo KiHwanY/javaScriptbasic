@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>key_val_object</title>
+<script type="text/javascript">
+// var 객체자료형 변수 = {변수명(key):값(value),변수명(key):값(value), ....}
+var myCar ={
+		maker:"BMW",
+		model:"X5",
+		year:2023,
+		speed:100,
+		speedDown:function(){this.speed -= 10;},
+		speedUp:function(){this.speed += 10;}
+		
+		
+};
+document.write(typeof(myCar)+"<br>");
+myCar.speedUp();
+document.write("속도 :"+ myCar.speed+"<br>");
+myCar.speedDown();
+document.write("속도 :"+ myCar.speed+"<br>");
+
+
+//멤버호출방법 : 참조변수.변수명 or 참조변수["변수명"]
+document.write(myCar.maker+"<br>");
+document.write(myCar["maker"]+"<br>");
+
+myCar.maker ="Benz";
+myCar.model="E300";
+myCar.yeal=2019;
+myCar.speed=200;
+
+
+document.write("메이커 : " ,myCar.maker+"<br>");
+document.write("모델 : ",myCar.model+"<br>");
+document.write("연식 : ",myCar.yeal+"<br>");
+document.write("속도 : ",myCar.speed+"<br>");
+myCar.speedUp();
+document.write("메이커 : " ,myCar.maker+"<br>");
+document.write("모델 : ",myCar.model+"<br>");
+document.write("연식 : ",myCar.yeal+"<br>");
+document.write("속도 : ",myCar.speed+"<br>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

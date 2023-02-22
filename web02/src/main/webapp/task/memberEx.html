@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function enter() {
+		if (window.event.keyCode == 13) {
+		}
+	}
+	function inputstr() {
+		var id = document.member.id.value;
+		var pw = document.member.pw.value;
+		var name = document.member.name.value;
+		var email = document.member.email.value;
+		var tel = document.member.tel.value;
+		if (id == "") {
+			alert("아이디를 입력하세요.");
+			return;
+		}
+		if (pw == "") {
+			alert("비밀번호를 입력하세요.");
+			return;
+		}
+		if (name == "") {
+			alert("이름을 입력하세요.");
+			return;
+		}
+		if (email == "") {
+			alert("이메일을 입력하세요.");
+			return;
+		}
+		if (tel == "") {
+			alert("전화번호를 입력하세요.");
+			return;
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="member_result.jsp" method="post" name="member" onclick="inputstr()">
+		<table>
+			<tr>
+				<td>아이디 :</td>
+				<td><input type="text" name="id" id="id"></td>
+			</tr>
+			<tr>
+				<td>비밀번호 :</td>
+				<td><input type="password" name="pw" id="pw"></td>
+			</tr>
+			<tr>
+				<td>이름 :</td>
+				<td><input type="text" name="name" id="name"></td>
+			</tr>
+			<tr>
+				<td>이메일 :</td>
+				<td><input type="email" name="email" id="email"></td>
+			</tr>
+			<tr>
+				<td>전화번호 :</td>
+				<td><input type="tel" name="tel" id="tel" onkeyup="enter()">
+				</td>
+			</tr>
+			<tr>
+				<td><button>확인</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

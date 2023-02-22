@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form_exp</title>
+<script type="text/javascript">
+function idcommInfo() {
+	//아이디 체크
+	var userid = document.getElementById("userid");
+	if (userid.value == "") {
+		var str ="필수 입력 항목입니다.";
+		document.getElementById("idinfo").innerHTML = str;
+		//$("#userid").html(str);//jQuery로 바꾸면
+	}
+}
+function pwd1commInfo() {
+	//비번 체크
+		var pwd1 = document.getElementById("pwd1");
+	if (pwd1.value == "") {
+		var str ="필수 입력 항목입니다.";
+		document.getElementById("pwd1info").innerHTML = str;
+		//$("#userid").html(str);//jQuery로 바꾸면
+	}
+}
+function pwd2commInfo() {
+	//비번 체크
+	var pwd2 = document.getElementById("pwd2");
+if (pwd1.value == "") {
+	var str ="필수 입력 항목입니다.";
+	document.getElementById("pwd2info").innerHTML = str;
+	//$("#userid").html(str);//jQuery로 바꾸면
+}
+}
+function idInfo() {
+	var str = "영문,숫자를 사용한 4~10자리로 입력";
+	document.getElementById("idinfo").innerHTML = str;
+}
+function pwdInfo() {
+	var str ="영문대소문자, 숫자, 특수기호(!@#$%^&*=-)를 모두 사용해서 8~12자리로 입력";
+	document.getElementById("pwd1info").innerHTML = str;
+}
+function nameInfo() {
+	var str = "이름은 한글만 가능";
+	document.getElementById("nameinfo").innerHTML = str;
+}
+
+
+
+function check() {
+	//아이디 체크
+	var userid = document.getElementById("userid");
+	if (userid.value == "") {
+		alert("아이디는 필수 입력입니다.");
+		userid.focus();
+		return;
+	}
+	var exp1 = /^[A-Za-z0-9]{4,10}$/; //(영문,숫자를 사용한 4~10자리로 입력)
+	console.log("test : "+ exp1.test(userid.value));
+	//test(검사할 문자열)는 규칙에 맞으면 true, 틀리면 false리턴
+	if (!exp1.test(userid.value)) {
+		alert("아이디는 영문자, 숫자를 사용해서 4~10자리로 입력하세요.");
+		userid.focus();
+		return;
+	}
+	
+	//비밀번호 체크
+	var pwd1 = document.getElementById("pwd1");
+	var pwd2 = document.getElementById("pwd2");
+	if (pwd1.value== "") {
+		alert("비밀번호는 필수 입력입니다.");
+		pwd1.focus();
+		return;
+	}
+	var exp2= /(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]){8,12}/;
+	//()괄호로 쓸때는 시작^ 끝&기호를 쓰면 안됨.
+	//적어도 소문자 하나, 대문자 하나, 특수문자 하나, 숫자 하나(*[0-9]) 가 포함되어 있는 8~12개 사이의 문자열
+	if (!exp2.test(pwd1.value)) {
+		alert("비밀번호는 영문대소문자,숫자,특수기호(!@#$%^*+=-)를 모두 사용해서 8~12자리로 입력하세요.");
+		pwd1.focus();
+		return;
+	}
+	
+	
+	if (pwd1.value != pwd2.value) {
+		alert("비밀번호 불일치");
+		pwd2.focus();
+		return;
+	}
+	//이름 체크
+	var name = document.getElementById("name");
+	if (name.value == "") {
+		alert("이름은 필수 입력입니다.");
+		name.focus();
+		return;
+	}
+	var exp3 = /^[가-힣]+$ /;
+	if (!exp3.test(name.value)) {
+		alert("이름은 한글만 가능합니다.");
+		name.focus();
+		return;
+	}
+	//이메일 체크
+	var email= document.getElementById("email");
+	var exp4 = /^[a-z09]{2,}@[a-z0-9]{2,}\.[a-z]{2,}$ /;
+	if (!exp4.test(email.value)) {
+		alert("이메일 형식이 잘못되었습니다. ex)abc@abc.com");
+		email.focus();
+		return;
+	}
+	//전화번호 체크
+	var phone = document.getElementById("phone");
+	//var exp5=/^[0-9]+$/;
+	var exp5 = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$ /;
+	if (!phone.value.match(exp5)) {
+		alert("전화번호의 형식이 틀립니다.");
+		phone.focus();
+		return;
+	}
+	//match(정규표현식)은 규칙에 맞는 부분을 찾아 배열로 반환하고 대응되는 문자열을 못찾으면 null값을 반환한다.
+	
+	console.log("match : "+ phone.value.match(exp5));
+	console.log("test : "+ exp5.test(phone.value));
+	
+	alert("정상적으로 입력되었습니다.");
+}
+
+</script>
+</head>
+<body>
+<form >
+<fieldset>
+<legend>회원 가입</legend>
+아이디 : <input type="text" id="userid" onfocus="idInfo()" onblur="idcommInfo()"> <br>
+<span id ="idinfo" style="color: red;"></span> <br>
+
+비밀번호 : <input type="password"  id ="pwd1" onfocus="pwdInfo()" onblur="pwd1commInfo()"> <br>
+<span id ="pwd1info" style="color: red;"></span> <br>
+
+비밀번호확인 : <input type="password" id="pwd2" onblur="pwd2commInfo()"><br>
+<span id="pwd2info" style="color: red;"></span> <br>
+
+이름 : <input type="text" id="name" onfocus="nameInfo()"><br>
+<span id="nameinfo" style="color: red;"></span> <br>
+
+이메일 : <input type="text" id="email" placeholder="avc@abc.com"><br>
+전화번호 : <input id="phone"> <br>
+<hr>
+<input type="button" onclick="check()" value="확인">
+</fieldset>
+</form>
+</body>
+</html>

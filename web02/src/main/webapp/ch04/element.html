@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>element</title>
+</head>
+<body>
+<ul>
+	<li>아이템1</li>
+	<li>아이템2</li>
+	<li>아이템3</li>
+</ul>
+<ul>
+	<li>아이템4</li>
+	<li>아이템5</li>
+	<li>아이템6</li>
+</ul>
+<script type="text/javascript">
+//getElementsByTagName("태그이름"), 지금은 JQuery로 대체중임
+var list = document.getElementsByTagName("ul")[1];//[1]두번째 ul태그를 가리킴(배열처리한것)
+var allItems = list.getElementsByTagName("li");
+for(i=0; i<allItems.length; i++){
+	alert(allItems[i]);
+}
+</script>
+</body>
+</html>

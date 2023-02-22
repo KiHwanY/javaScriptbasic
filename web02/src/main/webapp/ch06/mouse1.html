@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>mouse1</title>
+<script src="../include/jquery-3.6.3.min.js"></script>
+<script type="text/javascript">
+/* $(function() {
+	//선택자.on({이벤트:함수 , 이벤트:함수, 이벤트:함수,...})
+	$("img").on({
+		mouseout : function() {//마우스 빠져나갈때
+			$("img").attr("src","../im/i0075.jpg");
+		},
+		mouseover : function() {//마우스 올라갈때
+			$("img").attr("src","../im/i0076.jpg");
+		},
+		click : function() {
+			$("img").attr("src","../im/i0073.jpg");
+		}
+	});
+}); */
+
+//3개의 이벤트를 별도로 처리
+$(function() {
+	$("img").mouseout(function() {
+		$("img").attr("src","../im/i0075.jpg");
+	});
+	$("img").mouseover(function() {
+		$("img").attr("src","../im/i0076.jpg");
+	});
+	$("img").click(function() {
+		$("img").attr("src","../im/i0073.jpg");
+	});
+
+});
+
+</script>
+</head>
+<body>
+<img alt="" src="../im/i0075.jpg">
+
+</body>
+</html>

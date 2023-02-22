@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>anno_func</title>
+<script type="text/javascript">
+var plusTen = function() { //익명함수 
+	var num1= prompt("숫자를 입력하세요.","");
+	alert(Number(num1)+10);
+};
+/* alert(typeof(plusTen));
+alert(plusTen); */
+plusTen();//변수를 통해 익명함수호출
+
+var add=plusTen;
+add();//또 다른 변수 add에 익명함수를 저장해서 호출 가능
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

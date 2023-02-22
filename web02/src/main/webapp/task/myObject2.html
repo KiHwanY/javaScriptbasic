@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myObject2</title>
+<script type="text/javascript">
+var emp ={
+	deptno:123,
+	name:"김길동",
+	id : "kim",
+	email : "kim@gmail.com",
+	hp : "010-1234-5678"
+};
+document.write("-----------원데이터-----------","<br>");
+document.write("사번 : ",emp.deptno,"<br>");
+document.write("이름 : ",emp.name,"<br>");
+document.write("ID : ",emp.id,"<br>");
+document.write("이메일 : ",emp.email,"<br>");
+document.write("HP : ",emp.hp,"<br>");
+
+
+document.write("<br>");
+emp.email="kim2@daum.com";
+emp.hp= "010-7777-8888";
+
+document.write("-----------변경데이터-----------","<br>");
+document.write("사번 : ",emp.deptno,"<br>");
+document.write("이름 : ",emp.name,"<br>");
+document.write("ID : ",emp.id,"<br>");
+document.write("이메일 : ",emp.email,"<br>");
+document.write("HP : ",emp.hp,"<br>");
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
