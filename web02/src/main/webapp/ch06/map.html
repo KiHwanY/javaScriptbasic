@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>map</title>
+<script src="../include/jquery-3.6.3.min.js"></script>
+<script type="text/javascript">
+var arrName = ["갑","을","병","정"];
+$(function() {
+	//자바와는 반대로 key,value가 아닌 value,key로 값이 처리됨
+	//자바스크립트의 map() : 기본적으로 배열 처리됨
+	var arr = arrName.map(function(value, key) {
+		console.log("value : "+value+ ", key : "+ key);
+		return value;
+	});
+	console.log(arr);//F12 콘솔창에서 확인
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
